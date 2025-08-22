@@ -1,12 +1,23 @@
 """Basic music theory helpers."""
 from __future__ import annotations
 
-from typing import Sequence
+from typing import Sequence, List
 
 KEYS = {
     "C": {0, 2, 4, 5, 7, 9, 11},
     "Am": {0, 2, 3, 5, 7, 8, 10},
 }
+
+# Basic set of chord names made available for selection in the demo
+# application. This is intentionally lightweight – the underlying model
+# would typically support many more chords, but exposing a small fixed set
+# keeps the CLI simple and mirrors a list that might be shown in a UI.
+CHORDS = ("A", "B", "C", "D", "E", "F", "G")
+
+
+def get_available_chords() -> List[str]:
+    """Return the list of chord names that can be displayed to users."""
+    return list(CHORDS)
 
 
 def detect_key(notes: Sequence[int]) -> str:
