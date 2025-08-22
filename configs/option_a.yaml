@@ -1,0 +1,25 @@
+io:
+  sample_rate: 24000
+  out_dir: outputs
+modes:
+  fallback_if_vocal_missing: true
+  artist_style: "indie-pop"
+singsong:
+  enabled: true
+  adapter_dim: 256
+text2song:
+  enabled: false
+vfo:
+  enabled: true
+  lambda: 0.3
+  loss: "bce"
+  filter_threshold: 0.6
+iddm:
+  enabled: true
+  alpha: 0.5
+  beta: 0.1
+  entropy_coef: 0.01
+cimrl:
+  enabled: true
+  bc_topk: 8
+  risk_threshold: 0.4
