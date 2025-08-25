@@ -29,6 +29,19 @@ The notebook demonstrates data preprocessing, model configuration, and training 
 2. Open `melody_ai.ipynb` and execute the cells in order.
 3. Provide paths to MIDI datasets from MusicBench, Music-Instruct, or Chordonomicon as needed within the notebook.
 
+## Preparing Personal Audio for Fine-Tuning
+The repository also supports fine-tuning on your own recordings. If your WAV
+files do not include chord or MIDI information, the notebook provides a helper
+function `extract_chords_from_wav` that estimates a naive chord progression:
+
+```python
+chords = extract_chords_from_wav("my_song.wav")
+print(chords)
+```
+
+The resulting list of chord labels can then be paired with the audio when
+preparing datasets for fine-tuning.
+
 ## Prerequisites
 - Python 3.10 or newer
 - Git and pip
